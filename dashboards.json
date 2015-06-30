@@ -1,0 +1,238 @@
+{
+    "dashboards": [
+        {
+            "name": "ACCIDENTS",
+            "id": "eIuMNQ4HurN",
+            "href": "http://roadsafety.go.tz/demo/api/dashboards/eIuMNQ4HurN",
+            "dashboardItems": [
+                {
+                    "id": "XMeP6MpiF9T",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "xJs5hkXqBMM",
+                    "shape": "normal",
+                    "type": "map"
+                },
+                {
+                    "id": "JmS17ReRkv1",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "ymEaSFcVgDX",
+                    "shape": "double_width",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "bt0sWBDNWBl",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "oKWNPxkYzxG",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "YFkD3LCZDms",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "p3CvzF54EeS",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "robgWJ9YR83",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "jTb7z9wzzOu",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "Fowgi1T2uHz",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "a4M4kFJDrYL",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "z9RG5s5wqmk",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "h2biCzvimJp",
+                    "shape": "normal",
+                    "type": "eventReport"
+                }
+            ]
+        },
+        {
+            "name": "DRIVERS",
+            "id": "K3X6dkThTRc",
+            "href": "http://roadsafety.go.tz/demo/api/dashboards/K3X6dkThTRc",
+            "dashboardItems": [
+                {
+                    "id": "fPC6syFIEVH",
+                    "shape": "full_width",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "quGqYQJAkCK",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "ynp00tW0XRO",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "mor9n5szTYs",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "vQ5dcuu9gGT",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "mor9n5szTYs",
+                    "shape": "normal",
+                    "type": "eventChart"
+                }
+            ]
+        },
+        {
+            "name": "OFFENSES",
+            "id": "zJGC9KaDdJD",
+            "href": "http://roadsafety.go.tz/demo/api/dashboards/zJGC9KaDdJD",
+            "dashboardItems": [
+                {
+                    "id": "UuNfHPNaH2B",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "vswDXjx4lOc",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "LtKiQYV7JRm",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "iQlqEmbIwPY",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "J6cOQ1joV9i",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "xdJXr0eviV4",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "npPsjRT4lir",
+                    "shape": "full_width",
+                    "type": "eventReport"
+                }
+            ]
+        },
+        {
+            "name": "POPULATION",
+            "id": "xDm4ZpMT6WZ",
+            "href": "http://roadsafety.go.tz/demo/api/dashboards/xDm4ZpMT6WZ",
+            "dashboardItems": [
+                {
+                    "id": "b8vEsPvP36N",
+                    "shape": "double_width",
+                    "type": "chart"
+                },
+                {
+                    "id": "jhhtHhe2VQb",
+                    "shape": "normal",
+                    "type": "map"
+                },
+                {
+                    "id": "kh4GAuCZjZN",
+                    "shape": "full_width",
+                    "type": "reportTable"
+                },
+                {
+                    "id": "sRPIdv0MEpF",
+                    "shape": "full_width",
+                    "type": "map"
+                },
+                {
+                    "id": "EpBGgyWv05K",
+                    "shape": "full_width",
+                    "type": "reportTable"
+                }
+            ]
+        },
+        {
+            "name": "VEHICLES",
+            "id": "RYfTwaHBnJC",
+            "href": "http://roadsafety.go.tz/demo/api/dashboards/RYfTwaHBnJC",
+            "dashboardItems": [
+                {
+                    "id": "XOKXBy4G7E8",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "Y5SytBK51Mi",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "X4KcpQfXQ2c",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "NkgAN60whCO",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "abm3B4O8DZ8",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "ajjqKE6YbYN",
+                    "shape": "normal",
+                    "type": "eventChart"
+                },
+                {
+                    "id": "Law5ZmV3bNo",
+                    "shape": "normal",
+                    "type": "eventReport"
+                },
+                {
+                    "id": "SLkbvqkJgYP",
+                    "shape": "full_width",
+                    "type": "eventReport"
+                }
+            ]
+        }
+    ]
+}
