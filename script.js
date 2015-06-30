@@ -17,63 +17,60 @@ console.log(decodedString); // Outputs: "Hello World!"
 
 $(document).ready(function(){
 
-    $.getJSON("http://roadsafety.go.tz/demo/api/dashboards.json?fields=id,name,href,dashboardItems[id,type,shape]&paging=false",function(data){
-        $.each(data.dashboards, function(index, element) {
-            $(".menu").append("<li  class='main-menu' id='"+element.id+"'><a href='#'>"+element.name+"</a></li>");
-        });
-        $(".main-menu").click(function(){
-            $(".main-menu").removeClass('active');
-            $(this).addClass("active");
-            var id = $(this).attr("id");
-            $(".contents").html(id);
-            var item = $(this);
-            $.each(data.dashboards, function(index, element) {
-                if(element.id == id){
-                    $(".contents").html("");
-                    $.each(element.dashboardItems, function(index, ds) {
-                        if(ds.shape == "normal")
-                            $.ajax({
-                                    type: 'GET',
-                                    url: 'http://roadsafety.go.tz/demo/api/dashboardItems/'+ds.id,
-                                    headers: {
-                                        "Authorization": "Basic " + encodedString,
-                                        "Content-Type": "application/json"
-                                    },
-                                    success : function(data) {
-                                        var imgurl = data[data.type].href+'/data'
-                                        $(".contents").append("<div class='col-sm-6' style=''><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
-                                    }
-
-                                });
-                        if(ds.shape == "double_width" || ds.shape == "full_width" )
-                            $.ajax({
-                                type: 'GET',
-                                url: 'http://roadsafety.go.tz/demo/api/dashboardItems/'+ds.id,
-                                headers: {
-                                    "Authorization": "Basic " + encodedString,
-                                    "Content-Type": "application/json"
-                                },
-                                success : function(data) {
-                                    var imgurl = data[data.type].href+'/data'
-                                    $(".contents").append("<div class='col-sm-12' style=''><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
-                                }
-
-                            });
-                    });
-                }
-            });
-        });
-        $( ".main-menu" ).first().trigger("click");
-    });
-
-                $.ajax({
+    $.ajax({
                     type: 'GET',
-                    url: 'http://roadsafety.go.tz/demo/api/dashboards.json',
+                    url: 'http://roadsafety.go.tz/demo/api/dashboards.json?fields=id,name,href,dashboardItems[id,type,shape]&paging=false',
                     headers: {
                         "Authorization": "Basic " + encodedString,
                         "Content-Type": "application/json"
                     },
                     success : function(data) {
+                        $.each(data.dashboards, function(index, element) {
+                            $(".menu").append("<li  class='main-menu' id='"+element.id+"'><a href='#'>"+element.name+"</a></li>");
+                        });
+                        $(".main-menu").click(function(){
+                            $(".main-menu").removeClass('active');
+                            $(this).addClass("active");
+                            var id = $(this).attr("id");
+                            $(".contents").html(id);
+                            var item = $(this);
+                            $.each(data.dashboards, function(index, element) {
+                                if(element.id == id){
+                                    $(".contents").html("");
+                                    $.each(element.dashboardItems, function(index, ds) {
+                                        if(ds.shape == "normal")
+                                            $.ajax({
+                                                type: 'GET',
+                                                url: 'http://roadsafety.go.tz/demo/api/dashboardItems/'+ds.id,
+                                                headers: {
+                                                    "Authorization": "Basic " + encodedString,
+                                                    "Content-Type": "application/json"
+                                                },
+                                                success : function(data) {
+                                                    var imgurl = data[data.type].href+'/data'
+                                                    $(".contents").append("<div class='col-sm-6' style=''><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
+                                                }
+
+                                            });
+                                        if(ds.shape == "double_width" || ds.shape == "full_width" )
+                                            $.ajax({
+                                                type: 'GET',
+                                                url: 'http://roadsafety.go.tz/demo/api/dashboardItems/'+ds.id,
+                                                headers: {
+                                                    "Authorization": "Basic " + encodedString,
+                                                    "Content-Type": "application/json"
+                                                },
+                                                success : function(data) {
+                                                    var imgurl = data[data.type].href+'/data'
+                                                    $(".contents").append("<div class='col-sm-12' style=''><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
+                                                }
+
+                                            });
+                                    });
+                                }
+                            });
+                        });
+                        $( ".main-menu" ).first().trigger("click");
                     }
 
                 });
