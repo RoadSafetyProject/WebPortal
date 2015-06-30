@@ -44,7 +44,7 @@ $(document).ready(function(){
 
                 $.ajax({
                     type: 'GET',
-                    url: 'http://roadsafety.go.tz/api/dashboards.json',
+                    url: 'http://roadsafety.go.tz/demo/api/dashboards.json',
                     headers: {
                         "Authorization": "Basic " + encodedString,
                         "Content-Type": "application/json"
