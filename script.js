@@ -17,7 +17,7 @@ console.log(decodedString); // Outputs: "Hello World!"
 
 $(document).ready(function(){
 
-    $.getJSON("dashboards.json",function(data){
+    $.getJSON("http://roadsafety.go.tz/demo/api/dashboards.json?fields=id,name,href,dashboardItems[id,type,shape]&paging=false",function(data){
         $.each(data.dashboards, function(index, element) {
             $(".menu").append("<li  class='main-menu' id='"+element.id+"'><a href='#'>"+element.name+"</a></li>");
         });
@@ -32,9 +32,33 @@ $(document).ready(function(){
                     $(".contents").html("");
                     $.each(element.dashboardItems, function(index, ds) {
                         if(ds.shape == "normal")
-                            $(".contents").append("<div class='col-sm-6' style=''><p>id: "+ds.id+" &nbsp;&nbsp;&nbsp;&nbsp;type: "+ds.type+"</p><img src='http://placehold.it/500x300' style='width: 100%' class='thumbnail responsive'></div>" );
+                            $.ajax({
+                                    type: 'GET',
+                                    url: 'http://roadsafety.go.tz/demo/api/dashboardItems/'+ds.id,
+                                    headers: {
+                                        "Authorization": "Basic " + encodedString,
+                                        "Content-Type": "application/json"
+                                    },
+                                    success : function(data) {
+                                        var imgurl = data[data.type].href+'/data'
+                                        $(".contents").append("<div class='col-sm-6' style=''><p>id: "+ds.id+" &nbsp;&nbsp;&nbsp;&nbsp;type: "+ds.type+"</p><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
+                                    }
+
+                                });
                         if(ds.shape == "double_width" || ds.shape == "full_width" )
-                            $(".contents").append("<div class='col-sm-12' style=''><p>id: "+ds.id+" &nbsp;&nbsp;&nbsp;&nbsp;type: "+ds.type+"</p><img src='http://placehold.it/500x300' style='width: 100%' class='thumbnail responsive'></div>" );
+                            $.ajax({
+                                type: 'GET',
+                                url: 'http://roadsafety.go.tz/demo/api/dashboardItems/'+ds.id,
+                                headers: {
+                                    "Authorization": "Basic " + encodedString,
+                                    "Content-Type": "application/json"
+                                },
+                                success : function(data) {
+                                    var imgurl = data[data.type].href+'/data'
+                                    $(".contents").append("<div class='col-sm-12' style=''><p>id: "+ds.id+" &nbsp;&nbsp;&nbsp;&nbsp;type: "+ds.type+"</p><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
+                                }
+
+                            });
                     });
                 }
             });
