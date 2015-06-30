@@ -41,7 +41,7 @@ $(document).ready(function(){
                                     },
                                     success : function(data) {
                                         var imgurl = data[data.type].href+'/data'
-                                        $(".contents").append("<div class='col-sm-6' style=''><p>id: "+ds.id+" &nbsp;&nbsp;&nbsp;&nbsp;type: "+ds.type+"</p><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
+                                        $(".contents").append("<div class='col-sm-6' style=''><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
                                     }
 
                                 });
@@ -55,7 +55,7 @@ $(document).ready(function(){
                                 },
                                 success : function(data) {
                                     var imgurl = data[data.type].href+'/data'
-                                    $(".contents").append("<div class='col-sm-12' style=''><p>id: "+ds.id+" &nbsp;&nbsp;&nbsp;&nbsp;type: "+ds.type+"</p><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
+                                    $(".contents").append("<div class='col-sm-12' style=''><img src='"+imgurl+"' style='width: 100%' class='thumbnail responsive'></div>" );
                                 }
 
                             });
